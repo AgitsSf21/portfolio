@@ -139,8 +139,9 @@ body {
 .hero {
     height: 100vh;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    padding: 0 8%;
+    padding: 0 10%;
     padding-top: 60px;
 }
 
@@ -199,4 +200,92 @@ body {
 .cta-buttons {
     display: flex;
     gap: 15px;
+    margin-bottom: 30px;
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    gap: 20px;
+}
+.social-links a {
+    color: var(--text-muted);
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+.social-links a:hover {
+    color: var(--primary-color);
+    transform: translateY(-3px);
+    text-shadow: 0 0 15px var(--primary-glow);
+}
+
+/* Hero Image & Layout */
+.hero-image {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    animation: float 6s ease-in-out infinite;
+    z-index: 10;
+}
+
+.image-wrapper {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.4);
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 15%; /* Menggeser area wajah agar tidak terlalu ke atas */
+    border-radius: 50%;
+    /* Mengubah foto menjadi hitam-putih agar terlihat sangat premium dan menyatu dengan tema gelap */
+    filter: grayscale(100%) contrast(1.2) brightness(0.9);
+    transition: all 0.5s ease;
+}
+
+.image-wrapper img:hover {
+    /* Mengembalikan warna asli saat disorot mouse */
+    filter: grayscale(0%) contrast(1.1) brightness(1);
+    transform: scale(1.05);
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Sections General */
+.section {
+    padding: 100px 10%;
+}
+.section-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    text-align: center;
+}
+.section-title span {
+    color: var(--primary-color);
+}
+
+.experience-placeholder {
+    padding: 50px;
+    text-align: center;
+    border-radius: 20px;
+    color: var(--text-muted);
+}
+.experience-placeholder i {
+    font-size: 48px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
 }
