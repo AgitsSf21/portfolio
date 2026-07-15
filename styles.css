@@ -244,17 +244,17 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 15%; /* Menggeser area wajah agar tidak terlalu ke atas */
+    object-position: center 25%; /* Menggeser fokus agak ke atas */
     border-radius: 50%;
-    /* Mengubah foto menjadi hitam-putih agar terlihat sangat premium dan menyatu dengan tema gelap */
-    filter: grayscale(100%) contrast(1.2) brightness(0.9);
+    /* Melakukan Zoom-in karena foto diambil dari jarak jauh, agar fokus ke area badan dan wajah */
+    transform: scale(1.5) translateY(5%);
     transition: all 0.5s ease;
 }
 
 .image-wrapper img:hover {
-    /* Mengembalikan warna asli saat disorot mouse */
-    filter: grayscale(0%) contrast(1.1) brightness(1);
-    transform: scale(1.05);
+    /* Sedikit efek zoom saat disorot */
+    transform: scale(1.6) translateY(5%);
+    filter: brightness(1.1);
 }
 
 @keyframes float {
